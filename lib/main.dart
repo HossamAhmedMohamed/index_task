@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:index_login/core/cache/cache_helper.dart';
 import 'package:index_login/core/cache/secure_cache_storage.dart';
 import 'package:index_login/features/auth/presentation/screens/login.dart';
+import 'package:index_login/features/auth/presentation/screens/verfiy_code_screen.dart';
 import 'package:index_login/features/home/presentation/screens/home_screen.dart';
 
 Future<void> main() async {
@@ -34,10 +35,11 @@ class MyApp extends StatelessWidget {
     return FutureBuilder<String?>(
       future: SecureCacheHelper().getData(key: 'userToken'),
       builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
-        }
+        // if (snapshot.connectionState == ConnectionState.waiting) {
+        //   return const Center(child: CircularProgressIndicator());
+        // }
         final String? token = snapshot.data;
+        
         return ScreenUtilInit(
           designSize: const Size(393, 852),
           minTextAdapt: true,
@@ -52,7 +54,8 @@ class MyApp extends StatelessWidget {
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 fontFamily: 'Ping AR + LT',
               ),
-              home: token != null ? const HomeScreen() : const Login(),
+              // home: token != null ? const HomeScreen() : const Login(),
+              home: const VerfiyCodeScreen(),
             );
           },
         );

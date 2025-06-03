@@ -115,7 +115,9 @@ class VerifyOtpBody extends StatelessWidget {
                       if (state is VerifyOtpSuccess) {
                         Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(builder: (context) => const HomeScreen()),
+                          MaterialPageRoute(
+                            builder: (context) => const HomeScreen(),
+                          ),
                           (route) => false,
                         );
                       }
@@ -126,26 +128,32 @@ class VerifyOtpBody extends StatelessWidget {
                     builder: (context, state) {
                       return Form(
                         child: Column(
+                          textDirection: TextDirection.rtl,
                           children: [
-                            Pinput(
-                              controller: pinController,
-                              focusNode: focusNode,
-                              length: 4,
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              defaultPinTheme: defaultPinTheme,
-                              focusedPinTheme: focusedPinTheme,
-                              submittedPinTheme: submittedPinTheme,
-                              errorPinTheme: errorPinTheme,
-                              pinputAutovalidateMode:
-                                  PinputAutovalidateMode.onSubmit,
-                              showCursor: true,
-                              cursor: Container(
-                                width: 2,
-                                height: 24,
-                                decoration: BoxDecoration(
-                                  color: const Color(0xFFE85A3A),
-                                  borderRadius: BorderRadius.circular(1),
+                            Directionality(
+                              textDirection: TextDirection.ltr,
+                              child: Pinput(
+                                keyboardType: TextInputType.number,
+                                controller: pinController,
+                                focusNode: focusNode,
+                                length: 4,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                defaultPinTheme: defaultPinTheme,
+                                focusedPinTheme: focusedPinTheme,
+                                submittedPinTheme: submittedPinTheme,
+                                errorPinTheme: errorPinTheme,
+                                pinputAutovalidateMode:
+                                    PinputAutovalidateMode.onSubmit,
+                                showCursor: true,
+                                cursor: Container(
+                                  width: 2,
+                                  height: 24,
+                                  decoration: BoxDecoration(
+                                    color: const Color(0xFFE85A3A),
+                                    borderRadius: BorderRadius.circular(1),
+                                  ),
                                 ),
                               ),
                             ),
