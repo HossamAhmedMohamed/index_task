@@ -54,8 +54,8 @@ class MyApp extends StatelessWidget {
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 fontFamily: 'Ping AR + LT',
               ),
-              // home: token != null ? const HomeScreen() : const Login(),
-              home: const VerfiyCodeScreen(),
+              home: token != null ? const HomeScreen() : const Login(),
+              
             );
           },
         );

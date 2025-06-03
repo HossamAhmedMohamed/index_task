@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -243,7 +244,13 @@ class VerifyOtpBody extends StatelessWidget {
             ],
           ),
         ),
-      ),
-    );
+      ).animate()
+        .slideY(
+          begin: 1.0,
+          end: 0.0,    
+          duration: 1200.ms,  
+          curve: Curves.easeOutCubic,  
+        )
+        .fadeIn(duration: 1200.ms));
   }
 }
