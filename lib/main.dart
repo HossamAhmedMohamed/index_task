@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:index_login/core/cache/cache_helper.dart';
 import 'package:index_login/core/cache/secure_cache_storage.dart';
 import 'package:index_login/features/auth/presentation/screens/login.dart';
-import 'package:index_login/features/auth/presentation/screens/verfiy_code_screen.dart';
 import 'package:index_login/features/home/presentation/screens/home_screen.dart';
 
 Future<void> main() async {

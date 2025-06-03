@@ -12,7 +12,7 @@ class _ScrollableNavBarState extends State<ScrollableNavBar> {
   int selectedIndex = 4;
 
   final List<NavItem> navItems = [
-    NavItem(title: 'وأعصاب', icon: Icons.psychology),
+    NavItem(title: 'مخ وأعصاب', icon: Icons.psychology),
     NavItem(title: 'الأسنان', icon: Icons.medical_services),
     NavItem(title: 'قلب', icon: Icons.favorite),
     NavItem(title: 'رئة باطنة', icon: Icons.air),

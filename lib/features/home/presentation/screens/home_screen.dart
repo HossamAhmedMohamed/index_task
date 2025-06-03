@@ -49,7 +49,7 @@ class HomeScreen extends StatelessWidget {
                     topRight: Radius.circular(50.r),
                   ),
                 ),
-
+                clipBehavior: Clip.antiAlias,
                 child: Column(
                   children: [
                    

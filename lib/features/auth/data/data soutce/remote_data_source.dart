@@ -7,7 +7,7 @@ class RemoteDataSource {
   RemoteDataSource({required this.apiConsumer});
 
   Future<void> loginWithEmail(String email) async {
-    await apiConsumer.post('otp', data: {'email': email});
+    await apiConsumer.post('login', data: {'email': email});
   }
 
   Future<LoginModel> verifyOtp(String email, String otp) async {
